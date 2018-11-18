@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_upobrico_operario_tree_view"> <!-- Vista Tree -->
+			<field name="name">view_upobrico_operario_tree_view</field>
+			<field name="model">operario</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="name" />
+					<field name="dni" />
+					<field name="photo" widget="image" />
+					<field name="company_ids" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="view_upobrico_operario_form"> <!-- Vista Form. Control+espacio form-form para crear el form de vista -->
+			<field name="name">view_upobrico_operario_form</field>
+			<field name="model">operario</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="No se ve">
+					<field name="name" colspan="4" />
+					<field name="dni" />
+					<field name="photo" widget="image" /> <!-- widget image para que se vea la foto del usuario -->
+					<field name="company_ids" colspan="4"/> <!-- El widget widget="many2many" no hace falta -->
+				</form>
+			</field>
+		</record>
+		<record id="act_operario" model="ir.actions.act_window">
+			<field name="name">Operarios</field> <!-- Nombre que a veces aparecer por ejemplo cuando entras de Gym classes 
+				a un submenu, ver perfil admin para ver a que se refiere -->
+			<field name="res_model">operario</field> <!-- Modelo que vamos a mostrar -->
+			<field name="view_type">form</field> <!-- Aqui en view_type siempre va form, el que cambia es el view_mode -->
+			<field name="view_mode">form,tree</field> <!-- De que forma se pueden ver las vistas -->
+		</record>
+		<menuitem id="upobrico" name="Upobrico" action="act_operario" /> <!-- Menu primer nivel, se abrira operario lo primero al pulsar -->
+		<menuitem name="Operarios" id="operario_submenu" parent="upobrico"
+			sequence="100" /> <!-- Menu segundo nivel --> <!-- El action define la vista que se va a ver (aqui podriamos quitarlo porque 
+			no hace nada), el sequence cuanto mas bajo saldra encima de los que tengan 
+			un sequence bajo -->
+		<menuitem name="Ver operarios" id="operario_submenu_2"
+			parent="operario_submenu" sequence="100" action="act_operario" /> <!-- Menu tercer nivel -->
+	</data>
+</openerp>

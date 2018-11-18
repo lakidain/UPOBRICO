@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_upobrico_empresa_tree_view"> <!-- Vista Tree -->
+			<field name="name">view_upobrico_empresa_tree_view</field>
+			<field name="model">empresa</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="name" />
+					<field name="nif" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="view_upobrico_empresa_form"> <!-- Vista Form. Control+espacio form-form para crear el form de vista -->
+			<field name="name">view_upobrico_empresa_form</field>
+			<field name="model">empresa</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="No se ve">
+					<field name="name" colspan="4" />
+					<field name="nif" />
+				</form>
+			</field>
+		</record>
+		<record id="act_empresa" model="ir.actions.act_window">
+			<field name="name">Empresas</field> <!-- Nombre que a veces aparecer por ejemplo cuando entras de Gym classes 
+				a un submenu, ver perfil admin para ver a que se refiere -->
+			<field name="res_model">empresa</field> <!-- Modelo que vamos a mostrar -->
+			<field name="view_type">form</field> <!-- Aqui en view_type siempre va form, el que cambia es el view_mode -->
+			<field name="view_mode">form,tree</field> <!-- De que forma se pueden ver las vistas -->
+		</record>
+		<menuitem name="Empresas" id="empresas_submenu" parent="upobrico"
+			sequence="100" />
+		<menuitem name="Ver empresas" id="ver_empresas_submenu"
+			parent="empresas_submenu" sequence="110" action="act_empresa" />
+	</data>
+</openerp>
