@@ -1,2 +1,2 @@
 # UPOBRICO
-OpenMP modules simulating a repair company.
+OpenERP modules simulating a repair company.
