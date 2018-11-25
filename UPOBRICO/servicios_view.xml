@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<!-- VISTA DE TREE -->
+		<record model="ir.ui.view" id="view_upobrico_servicios_tree_view">
+			<field name="name">view_upobrico_servicios_tree_view</field>
+			<field name="model">servicios</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="id" />
+					<field name="f_creacion" />
+					<field name="descripcion" />
+				</tree>
+			</field>
+		</record>
+		<!-- VISTA DE FORM -->
+		<record model="ir.ui.view" id="view_upobrico_servicios_form">
+			<field name="name">view_upobrico_servicios_form</field>
+			<field name="model">servicios</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="form_string">
+					<field name="id" />
+					<field name="f_creacion" />
+					<field name="descripcion"/>
+				</form>
+			</field>
+		</record>
+
+		<record id="act_servicios" model="ir.actions.act_window">
+			<field name="name">Servicios</field>
+			<!-- Nombre que a veces aparecer por ejemplo cuando entras de Gym classes 
+				a un submenu, ver perfil admin para ver a que se refiere -->
+			<field name="res_model">servicios</field> <!-- Modelo que vamos a mostrar -->
+			<field name="view_type">form</field> <!-- Aqui en view_type siempre va form, el que cambia es el view_mode -->
+			<field name="view_mode">form,tree</field> <!-- De que forma se pueden ver las vistas -->
+		</record>
+
+		<!-- Menu primer nivel, se abrira operario lo primero al pulsar -->
+		<menuitem id="upobrico" name="Upobrico" action="act_servicios" />
+		<!-- Menu segundo nivel El action define la vista que se va a ver (aqui 
+			podriamos quitarlo porque no hace nada), el sequence cuanto mas bajo saldra 
+			encima de los que tengan un sequence bajo -->
+		<menuitem name="Servicios" id="servicios_submenu" parent="upobrico"
+			sequence="100" />
+		<!-- Menu tercer nivel -->
+		<menuitem name="Ver Servicios" id="servicios_submenu_2"
+			parent="servicios_submenu" sequence="100" action="act_servicios" />
+	</data>
+</openerp>

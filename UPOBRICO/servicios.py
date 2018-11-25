@@ -1,3 +1,4 @@
+
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
@@ -19,5 +20,17 @@
 #    along with this program.  If not, see http://www.gnu.org/licenses/.
 #
 ##############################################################################
-import empresa #Importa el modelo de empresa
-import operario, servicios, citas
+from osv import osv
+from osv import fields
+
+class ClassName(osv.Model):
+    
+    _name = 'servicios'
+    _description = 'Servicios que realiza un operario'
+ 
+    _columns = {
+            'id':fields.char('ID', size=9, required=True),
+            'f_creacion':fields.date('fecha creacion', size=20, required=True),
+            'descripcion':fields.char('descripcion', size=140, required=True),
+
+        }
