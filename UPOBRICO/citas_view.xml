@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <openerp>
 	<data>
 		<record model="ir.ui.view" id="view_upobrico_citas_tree_view">
@@ -8,44 +9,50 @@
 			<field name="arch" type="xml">
 				<tree string="tree_string">
 					<field name="id" />
-					<field name="f_asignacion" />
+					<field name="f_asignacio" />
 					<field name="f_cita" />
 					<field name="descripcion" />
+					<field name="servicios_id" />
 				</tree>
 			</field>
 		</record>
-		<record model="ir.ui.view" id="view_upobrico_citas_tree_view">
-			<field name="name">view_upobrico_citas_tree_view</field>
+		<record model="ir.ui.view" id="view_upobrico_citas_form">
+			<field name="name">view_upobrico_citas_form</field>
 			<field name="model">citas</field>
 			<field name="type">form</field>
 			<field name="arch" type="xml">
-				<form string="form_string">
+				<form string="No se ve">
 					<field name="id" />
-					<field name="f_asignacion" />
+					<field name="f_asignacio" />
 					<field name="f_cita" />
 					<field name="descripcion" />
+					<field name="servicios_id" />
 				</form>
 			</field>
 		</record>
-		
+
 		<record id="act_citas" model="ir.actions.act_window">
 			<field name="name">Citas</field>
-			<!-- Nombre que a veces aparecer por ejemplo cuando entras de Gym classes 
-				a un submenu, ver perfil admin para ver a que se refiere -->
-			<field name="res_model">citas</field> <!-- Modelo que vamos a mostrar -->
-			<field name="view_type">form</field> <!-- Aqui en view_type siempre va form, el que cambia es el view_mode -->
-			<field name="view_mode">form,tree</field> <!-- De que forma se pueden ver las vistas -->
+			<field name="res_model">citas</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree</field>
 		</record>
-		
-		<!-- Menu primer nivel, se abrira operario lo primero al pulsar -->
-		<menuitem id="upobrico" name="Upobrico" action="act_servicios" />
-		<!-- Menu segundo nivel El action define la vista que se va a ver (aqui 
-			podriamos quitarlo porque no hace nada), el sequence cuanto mas bajo saldra 
-			encima de los que tengan un sequence bajo -->
+		<menuitem id="upobrico" name="Upobrico" action="act_citas" />
 		<menuitem name="Citas" id="citas_submenu" parent="upobrico"
 			sequence="100" />
-		<!-- Menu tercer nivel -->
-		<menuitem name="Ver Citas" id="citas_submenu_2"
+		<menuitem name="Ver citas" id="citas_submenu_2"
 			parent="citas_submenu" sequence="100" action="act_citas" />
+
 	</data>
 </openerp>
+
+
+
+
+
+
+
+
+
+
+

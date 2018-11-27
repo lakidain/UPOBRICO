@@ -32,4 +32,5 @@ class ClassName(osv.Model):
             'dni': fields.char('DNI', size=9, required=True),
             'photo': fields.binary('Photo'), #Si quieres que salgan fotos debes de poner un tipo de dato binario
             'company_ids': fields.many2one('empresa', 'Company'),
+            'servicios_id': fields.many2many('servicios', 'Servicios'),
         }

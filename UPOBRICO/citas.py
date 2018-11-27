@@ -25,11 +25,13 @@ from osv import fields
 
 class ClassName(osv.Model):
     _name = 'citas'
-    _description = 'citas del operario con el cliente'
+    _description = 'citas que realiza un servicio'
  
     _columns = {
-            'id':fields.char('ID', size=20, required=True,),
-            'f_asignacion':fields.date('fecha asignacion', size=20, required=True,),
-            'f_cita':fields.date('fecha cita con el cliente', size=20, required=True,),
-            'descripcion':fields.char('descripcion', size=140, required=True,),
+            'id':fields.char('ID', size=9, required=False),
+            'f_asignacio':fields.date('fecha_asignacio', size=20, required=False),
+            'f_cita':fields.date('fecha_cita', size=20, required=False),
+            'descripcion':fields.char('descripcion', size=140, required=False),
+            'servicios_id': fields.many2one('servicios', 'Servicioscitas'),
         }
+

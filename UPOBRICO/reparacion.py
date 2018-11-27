@@ -24,15 +24,14 @@ from osv import osv
 from osv import fields
 
 class ClassName(osv.Model):
-    _name = 'servicios'
-    _description = 'servicios que realiza un operario'
+    _name = 'reparacion'
+    _description = 'reparaciones de UPOBRICO'
  
     _columns = {
             'id':fields.char('ID', size=9, required=False),
-            'f_creacion':fields.date('fecha_creacion', size=20, required=False),
             'descripcion':fields.char('descripcion', size=140, required=False),
-            'operario_id': fields.one2many('operario', 'Operario'),
-            'citas_id': fields.many2one('citas', 'Citas'),
+            'f_entrada':fields.date('fecha_entrada', size=20, required=False),
+            'f_salida':fields.date('fecha_salida', size=20, required=False)
         }
 
 

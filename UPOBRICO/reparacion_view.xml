@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_upobrico_reparacion_tree_view">
+			<field name="name">view_upobrico_reparacion_tree_view</field>
+			<field name="model">reparacion</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="id" />
+					<field name="descripcion" />
+					<field name="f_entrada" />
+					<field name="f_salida" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="view_upobrico_reparacion_form">
+			<field name="name">view_upobrico_reparacion_form</field>
+			<field name="model">reparacion</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="No se ve">
+					<field name="id" />
+					<field name="descripcion" />
+					<field name="f_entrada" />
+					<field name="f_salida" />
+				</form>
+			</field>
+		</record>
+
+		<record id="act_reparacion" model="ir.actions.act_window">
+			<field name="name">Reparacion</field>
+			<field name="res_model">reparacion</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree</field>
+		</record>
+		<menuitem id="upobrico" name="Upobrico" action="act_reparacion" />
+		<menuitem name="Reparacion" id="reparacion_submenu" parent="upobrico"
+			sequence="100" />
+		<menuitem name="Ver reparacion" id="reparacion_submenu_2"
+			parent="reparacion_submenu" sequence="100" action="act_reparacion" />
+
+	</data>
+</openerp>
+
+
+
+
+
+
+
+
+

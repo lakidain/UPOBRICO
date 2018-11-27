@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_upobrico_material_tree_view">
+			<field name="name">view_upobrico_material_tree_view</field>
+			<field name="model">material</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="id" />
+					<field name="nombre" />
+					<field name="precio" />
+					<field name="descripcion" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="view_upobrico_material_form">
+			<field name="name">view_upobrico_material_form</field>
+			<field name="model">material</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="No se ve">
+					<field name="id" />
+					<field name="nombre" />
+					<field name="precio" />
+					<field name="descripcion" />
+				</form>
+			</field>
+		</record>
+
+		<record id="act_material" model="ir.actions.act_window">
+			<field name="name">Material</field>
+			<field name="res_model">material</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree</field>
+		</record>
+		<menuitem id="upobrico" name="Upobrico" action="act_material" />
+		<menuitem name="Material" id="material_submenu" parent="upobrico"
+			sequence="100" />
+		<menuitem name="Ver material" id="material_submenu_2"
+			parent="material_submenu" sequence="100" action="act_material" />
+
+	</data>
+</openerp>
+
+
+
+
+
+
+
+
+

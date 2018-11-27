@@ -11,6 +11,7 @@
 					<field name="dni" />
 					<field name="photo" widget="image" />
 					<field name="company_ids" />
+					<field name="servicios_id" />
 				</tree>
 			</field>
 		</record>
@@ -24,6 +25,7 @@
 					<field name="dni" />
 					<field name="photo" widget="image" /> <!-- widget image para que se vea la foto del usuario -->
 					<field name="company_ids" colspan="4"/> <!-- El widget widget="many2many" no hace falta -->
+					<field name="servicios_id" />
 				</form>
 			</field>
 		</record>

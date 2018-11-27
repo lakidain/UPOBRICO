@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_upobrico_cliente_tree_view">
+			<field name="name">view_upobrico_cliente_tree_view</field>
+			<field name="model">cliente</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="DNI" />
+					<field name="nombre" />
+					<field name="apellidos" />
+					<field name="direccion" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="view_upobrico_cliente_form">
+			<field name="name">view_upobrico_cliente_form</field>
+			<field name="model">cliente</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="No se ve">
+					<field name="DNI" />
+					<field name="nombre" />
+					<field name="apellidos" />
+					<field name="direccion" />
+				</form>
+			</field>
+		</record>
+
+		<record id="act_cliente" model="ir.actions.act_window">
+			<field name="name">Cliente</field>
+			<field name="res_model">cliente</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree</field>
+		</record>
+		<menuitem id="upobrico" name="Upobrico" action="act_cliente" />
+		<menuitem name="Cliente" id="cliente_submenu" parent="upobrico"
+			sequence="100" />
+		<menuitem name="Ver cliente" id="cliente_submenu_2"
+			parent="cliente_submenu" sequence="100" action="act_cliente" />
+
+	</data>
+</openerp>
+
+
+
+
+
+
+
+
+

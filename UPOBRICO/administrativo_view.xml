@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="view_upobrico_administrativo_tree_view">
+			<field name="name">view_upobrico_administrativo_tree_view</field>
+			<field name="model">administrativo</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="DNI" />
+					<field name="nombre" />
+					<field name="apellidos" />
+				</tree>
+			</field>
+		</record>
+		<record model="ir.ui.view" id="view_upobrico_administrativo_form">
+			<field name="name">view_upobrico_administrativo_form</field>
+			<field name="model">administrativo</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="No se ve">
+					<field name="DNI" />
+					<field name="nombre" />
+					<field name="apellidos" />
+				</form>
+			</field>
+		</record>
+
+		<record id="act_administrativo" model="ir.actions.act_window">
+			<field name="name">Administrativo</field>
+			<field name="res_model">administrativo</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form,tree</field>
+		</record>
+		<menuitem id="upobrico" name="Upobrico" action="act_administrativo" />
+		<menuitem name="Administrativo" id="administrativo_submenu" parent="upobrico"
+			sequence="100" />
+		<menuitem name="Ver administrativo" id="administrativo_submenu_2"
+			parent="administrativo_submenu" sequence="100" action="act_administrativo" />
+
+	</data>
+</openerp>
+
+
+
+
+
+
+
+
+

@@ -20,4 +20,4 @@
 #
 ##############################################################################
 import empresa #Importa el modelo de empresa
-import operario, servicios, citas
+import operario, servicios, citas, cliente, administrativo, reparacion, incidencia, material

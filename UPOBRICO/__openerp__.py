@@ -31,7 +31,7 @@
     """,
     "init_xml": [],
     'update_xml': [],
-    'data': ['operario_view.xml','empresa_view.xml','servicios_view.xml','citas_view.xml'], #tenemos ahora mismo operario como con la vista de primer nivel, posteriormente sera servicio el que lo tenga
+    'data': ['operario_view.xml', 'empresa_view.xml', 'servicios_view.xml', 'citas_view.xml', 'administrativo_view.xml','reparacion_view.xml','incidencia_view.xml','material_view.xml'],  # tenemos ahora mismo operario como con la vista de primer nivel, posteriormente sera servicio el que lo tenga
     'demo_xml': [],
     'installable': True,
     'active': False,
