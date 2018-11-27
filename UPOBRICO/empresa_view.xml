@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
 	<data>
-		<record model="ir.ui.view" id="view_upobrico_empresa_tree_view"> <!-- Vista Tree -->
+		<record model="ir.ui.view" id="view_upobrico_empresa_tree_view"> <!-- Vista Tree USAR CALENDAR Y GANT (?) -->
 			<field name="name">view_upobrico_empresa_tree_view</field>
 			<field name="model">empresa</field>
 			<field name="type">tree</field>
@@ -9,6 +9,7 @@
 				<tree string="tree_string">
 					<field name="name" />
 					<field name="nif" />
+					<field name="operario_ids" colspan="4" />
 				</tree>
 			</field>
 		</record>
@@ -20,6 +21,8 @@
 				<form string="No se ve">
 					<field name="name" colspan="4" />
 					<field name="nif" />
+					<newline></newline>
+					<field name="operario_ids" colspan="4" />
 				</form>
 			</field>
 		</record>
@@ -28,8 +31,10 @@
 				a un submenu, ver perfil admin para ver a que se refiere -->
 			<field name="res_model">empresa</field> <!-- Modelo que vamos a mostrar -->
 			<field name="view_type">form</field> <!-- Aqui en view_type siempre va form, el que cambia es el view_mode -->
-			<field name="view_mode">form,tree</field> <!-- De que forma se pueden ver las vistas -->
+			<field name="view_mode">form,tree</field> <!-- De que forma se pueden ver las vistas, puedes poner tree primero y es 
+				la que se abriria -->
 		</record>
+
 		<menuitem name="Empresas" id="empresas_submenu" parent="upobrico"
 			sequence="100" />
 		<menuitem name="Ver empresas" id="ver_empresas_submenu"

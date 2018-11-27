@@ -4,40 +4,43 @@
 	<data>
 		<record model="ir.ui.view" id="view_upobrico_servicios_tree_view">
 			<field name="name">view_upobrico_servicios_tree_view</field>
-			<field name="model">servicios</field>
+			<field name="model">servicio</field>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string="tree_string">
 					<field name="id" />
+					<field name="name" />
 					<field name="f_creacion" />
 					<field name="descripcion" />
-					<field name="operario_id" />
-					<field name="citas_id" />
+					<field name="operarios_ids" colspan="4" />
+					<field name="cita_ids" colspan="4" />
 				</tree>
 			</field>
 		</record>
 		<record model="ir.ui.view" id="view_upobrico_servicios_form">
 			<field name="name">view_upobrico_servicios_form</field>
-			<field name="model">servicios</field>
+			<field name="model">servicio</field>
 			<field name="type">form</field>
 			<field name="arch" type="xml">
 				<form string="No se ve">
 					<field name="id" />
+					<field name="name" />
 					<field name="f_creacion" />
 					<field name="descripcion" />
-					<field name="operario_id" />
-					<field name="citas_id" />
+					<newline></newline>
+					<field name="operarios_ids" colspan="4" />
+					<field name="cita_ids" colspan="4" />
 				</form>
 			</field>
 		</record>
 
 		<record id="act_servicios" model="ir.actions.act_window">
 			<field name="name">Servicios</field>
-			<field name="res_model">servicios</field>
+			<field name="res_model">servicio</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">form,tree</field>
 		</record>
-		<menuitem id="upobrico" name="Upobrico" action="act_servicios" />
+
 		<menuitem name="Servicios" id="servicios_submenu" parent="upobrico"
 			sequence="100" />
 		<menuitem name="Ver servicios" id="servicios_submenu_2"
@@ -45,12 +48,3 @@
 
 	</data>
 </openerp>
-
-
-
-
-
-
-
-
-

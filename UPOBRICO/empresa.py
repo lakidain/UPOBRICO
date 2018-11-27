@@ -22,7 +22,7 @@
 from osv import osv
 from osv import fields
 
-class ClassName(osv.Model):
+class empresa(osv.Model):
 
     
     _name = 'empresa'
@@ -31,4 +31,5 @@ class ClassName(osv.Model):
     _columns = {
             'name': fields.char('Company name', size=64, required=True),
             'nif': fields.char('Nif', size=9, required=True),
+            'operario_ids': fields.one2many('operario','company_id', 'Operarios')
         }

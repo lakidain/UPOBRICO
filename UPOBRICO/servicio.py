@@ -1,4 +1,3 @@
-
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
@@ -23,24 +22,16 @@
 from osv import osv
 from osv import fields
 
-class ClassName(osv.Model):
-    _name = 'servicios'
-    _description = 'servicios que realiza un operario'
+class servicio(osv.Model):
+    _name = 'servicio'
+    _description = 'servicio que realiza un operario'
  
     _columns = {
             'id':fields.char('ID', size=9, required=False),
-            'f_creacion':fields.date('fecha_creacion', size=20, required=False),
-            'descripcion':fields.char('descripcion', size=140, required=False),
-            'operario_id': fields.one2many('operario', 'Operario'),
-            'citas_id': fields.many2one('citas', 'Citas'),
+            'name': fields.char('Name',size=140, required=True),
+            'f_creacion':fields.date('Fecha_creacion', size=20, required=True),
+            'descripcion':fields.char('Descripcion', size=140, required=True),
+            'operarios_ids': fields.many2many( 'operario','operario_servicio_rel',
+                                              'servicio_id', 'operario_id', 'Operarios disponibles', required=True),
+            'cita_ids': fields.one2many('cita','servicio_id', 'Citas'),
         }
-
-
-
-
-
-
-
-
-
-

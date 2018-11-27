@@ -1,4 +1,3 @@
-
 # -*- encoding: utf-8 -*-
 ##############################################################################
 #
@@ -23,15 +22,14 @@
 from osv import osv
 from osv import fields
 
-class ClassName(osv.Model):
-    _name = 'citas'
+class cita(osv.Model):
+    _name = 'cita'
     _description = 'citas que realiza un servicio'
  
     _columns = {
             'id':fields.char('ID', size=9, required=False),
-            'f_asignacio':fields.date('fecha_asignacio', size=20, required=False),
-            'f_cita':fields.date('fecha_cita', size=20, required=False),
-            'descripcion':fields.char('descripcion', size=140, required=False),
-            'servicios_id': fields.many2one('servicios', 'Servicioscitas'),
+            'f_asignacion':fields.date('Fecha_asignacion', size=20, required=True),
+            'f_cita':fields.date('Fecha_cita', size=20, required=True),
+            'descripcion':fields.char('Descripcion', size=140, required=True),
+            'servicio_id': fields.many2one('servicio', 'Servicio', required=True),
         }
-

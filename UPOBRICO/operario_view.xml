@@ -10,8 +10,8 @@
 					<field name="name" />
 					<field name="dni" />
 					<field name="photo" widget="image" />
-					<field name="company_ids" />
-					<field name="servicios_id" />
+					<field name="company_id" />
+					<field name="servicios_ids" colspan="4" /> <!-- El widget widget="many2many" no hace falta -->
 				</tree>
 			</field>
 		</record>
@@ -24,8 +24,8 @@
 					<field name="name" colspan="4" />
 					<field name="dni" />
 					<field name="photo" widget="image" /> <!-- widget image para que se vea la foto del usuario -->
-					<field name="company_ids" colspan="4"/> <!-- El widget widget="many2many" no hace falta -->
-					<field name="servicios_id" />
+					<field name="company_id" colspan="4" /> <!-- El widget widget="many2many" no hace falta -->
+					<field name="servicios_ids" colspan="4" /> <!-- El widget widget="many2many" no hace falta -->
 				</form>
 			</field>
 		</record>
@@ -36,7 +36,7 @@
 			<field name="view_type">form</field> <!-- Aqui en view_type siempre va form, el que cambia es el view_mode -->
 			<field name="view_mode">form,tree</field> <!-- De que forma se pueden ver las vistas -->
 		</record>
-		<menuitem id="upobrico" name="Upobrico" action="act_operario" /> <!-- Menu primer nivel, se abrira operario lo primero al pulsar -->
+
 		<menuitem name="Operarios" id="operario_submenu" parent="upobrico"
 			sequence="100" /> <!-- Menu segundo nivel --> <!-- El action define la vista que se va a ver (aqui podriamos quitarlo porque 
 			no hace nada), el sequence cuanto mas bajo saldra encima de los que tengan 

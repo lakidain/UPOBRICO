@@ -4,55 +4,45 @@
 	<data>
 		<record model="ir.ui.view" id="view_upobrico_citas_tree_view">
 			<field name="name">view_upobrico_citas_tree_view</field>
-			<field name="model">citas</field>
+			<field name="model">cita</field>
 			<field name="type">tree</field>
 			<field name="arch" type="xml">
 				<tree string="tree_string">
 					<field name="id" />
-					<field name="f_asignacio" />
+					<field name="f_asignacion" />
 					<field name="f_cita" />
 					<field name="descripcion" />
-					<field name="servicios_id" />
+					<field name="servicio_id" colspan="4" />
 				</tree>
 			</field>
 		</record>
 		<record model="ir.ui.view" id="view_upobrico_citas_form">
 			<field name="name">view_upobrico_citas_form</field>
-			<field name="model">citas</field>
+			<field name="model">cita</field>
 			<field name="type">form</field>
 			<field name="arch" type="xml">
 				<form string="No se ve">
 					<field name="id" />
-					<field name="f_asignacio" />
+					<field name="f_asignacion" />
 					<field name="f_cita" />
 					<field name="descripcion" />
-					<field name="servicios_id" />
+					<field name="servicio_id" colspan="4" />
 				</form>
 			</field>
 		</record>
 
 		<record id="act_citas" model="ir.actions.act_window">
 			<field name="name">Citas</field>
-			<field name="res_model">citas</field>
+			<field name="res_model">cita</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">form,tree</field>
 		</record>
+
 		<menuitem id="upobrico" name="Upobrico" action="act_citas" />
 		<menuitem name="Citas" id="citas_submenu" parent="upobrico"
 			sequence="100" />
-		<menuitem name="Ver citas" id="citas_submenu_2"
-			parent="citas_submenu" sequence="100" action="act_citas" />
+		<menuitem name="Ver citas" id="citas_submenu_2" parent="citas_submenu"
+			sequence="100" action="act_citas" />
 
 	</data>
 </openerp>
-
-
-
-
-
-
-
-
-
-
-

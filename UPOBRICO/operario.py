@@ -22,15 +22,15 @@
 from osv import osv
 from osv import fields
 
-class ClassName(osv.Model):
+class operario(osv.Model):
 
     _name = 'operario'
     _description = 'Operario de la empresa'
  
     _columns = {
-            'name': fields.char('First name', size=60, required=True),
+            'name': fields.char('Nombre', size=60, required=True),
             'dni': fields.char('DNI', size=9, required=True),
-            'photo': fields.binary('Photo'), #Si quieres que salgan fotos debes de poner un tipo de dato binario
-            'company_ids': fields.many2one('empresa', 'Company'),
-            'servicios_id': fields.many2many('servicios', 'Servicios'),
+            'photo': fields.binary('Foto'), #Si quieres que salgan fotos debes de poner un tipo de dato binario
+            'company_id': fields.many2one('empresa', 'Company', required=True),
+            'servicios_ids': fields.many2many('servicio','operario_servicio_rel','operario_id','servicio_id','Servicios que realiza'),
         }
