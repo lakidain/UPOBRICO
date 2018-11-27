@@ -13,6 +13,7 @@
 				</tree>
 			</field>
 		</record>
+
 		<record model="ir.ui.view" id="view_upobrico_empresa_form"> <!-- Vista Form. Control+espacio form-form para crear el form de vista -->
 			<field name="name">view_upobrico_empresa_form</field>
 			<field name="model">empresa</field>
@@ -26,6 +27,7 @@
 				</form>
 			</field>
 		</record>
+		
 		<record id="act_empresa" model="ir.actions.act_window">
 			<field name="name">Empresas</field> <!-- Nombre que a veces aparecer por ejemplo cuando entras de Gym classes 
 				a un submenu, ver perfil admin para ver a que se refiere -->
@@ -34,6 +36,7 @@
 			<field name="view_mode">form,tree</field> <!-- De que forma se pueden ver las vistas, puedes poner tree primero y es 
 				la que se abriria -->
 		</record>
+
 
 		<menuitem name="Empresas" id="empresas_submenu" parent="upobrico"
 			sequence="100" />

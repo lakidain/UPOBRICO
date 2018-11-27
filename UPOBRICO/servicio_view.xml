@@ -17,6 +17,7 @@
 				</tree>
 			</field>
 		</record>
+
 		<record model="ir.ui.view" id="view_upobrico_servicios_form">
 			<field name="name">view_upobrico_servicios_form</field>
 			<field name="model">servicio</field>
@@ -31,6 +32,21 @@
 					<field name="operarios_ids" colspan="4" />
 					<field name="cita_ids" colspan="4" />
 				</form>
+			</field>
+		</record>
+
+		<!-- Category Search View -->
+		<record model="ir.ui.view" id="view_servicio_search">
+			<field name="name">view_servicio_search</field>
+			<field name="model">servicio</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Busqueda"> <!-- Esto creemos que no aparece en ningun lado -->
+					<separator orientation="vertical" />	<!-- Esto en esta version no hace nada en principio -->
+					<field name="id" />	<!-- Por defecto aparecera primero esta columna y luego las demas para buscar por ellas -->
+					<field name="name" />
+					<field name="f_creacion" />
+				</search>
 			</field>
 		</record>
 

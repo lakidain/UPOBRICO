@@ -16,6 +16,7 @@
 				</tree>
 			</field>
 		</record>
+
 		<record model="ir.ui.view" id="view_upobrico_citas_form">
 			<field name="name">view_upobrico_citas_form</field>
 			<field name="model">cita</field>
@@ -31,11 +32,38 @@
 			</field>
 		</record>
 
+		<!-- Calendar View, ctrl+espacio para generar la plantilla -->
+		<record model="ir.ui.view" id="cita_calendar_view">
+			<field name="name">cita_calendar_view</field>
+			<field name="model">cita</field>
+			<field name="type">calendar</field>
+			<field name="arch" type="xml">
+				<calendar string="Calendario de clases" color="servicio_id"
+					date_start="f_asignacion" date_stop="f_cita"> <!-- Start es la columna cuando empieza la clase y end cuando termina, el 
+						color es que coloree las clases por el tipo que le pongas -->
+					<field name="descripcion" />	<!--Hemos decidido poner la descripcion para que a simple vista se vea la 
+						descripcion del caso -->
+				</calendar>
+			</field>
+		</record>
+
+		<!-- Gantt View -->
+		<record model="ir.ui.view" id="cita_calendar_gantt">
+			<field name="name">cita_calendar_gantt</field>
+			<field name="model">cita</field>
+			<field name="type">gantt</field>
+			<field name="arch" type="xml">
+				<gantt color="servicio_id" date_stop="f_cita" date_start="f_asignacion"
+					string="Tasks">
+				</gantt>
+			</field>
+		</record>
+
 		<record id="act_citas" model="ir.actions.act_window">
 			<field name="name">Citas</field>
 			<field name="res_model">cita</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">form,tree</field>
+			<field name="view_mode">form,tree,calendar,gantt</field>
 		</record>
 
 		<menuitem id="upobrico" name="Upobrico" action="act_citas" />
