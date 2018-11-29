@@ -15,7 +15,7 @@
 				</tree>
 			</field>
 		</record>
-		
+
 		<record model="ir.ui.view" id="view_upobrico_operario_form"> <!-- Vista Form. Control+espacio form-form para crear el form de vista -->
 			<field name="name">view_upobrico_operario_form</field>
 			<field name="model">operario</field>
@@ -31,6 +31,23 @@
 			</field>
 		</record>
 
+		<!-- Category Search View -->
+		<record model="ir.ui.view" id="view_operario_search">
+			<field name="name">view_operario_search</field>
+			<field name="model">operario</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Busqueda"> <!-- Esto creemos que no aparece en ningun lado -->
+					<separator orientation="vertical" />	<!-- Esto en esta version no hace nada en principio -->
+					<field name="name" />
+					<group expand="0" string="Agrupar por...">	<!-- Podemos a agrupar por un campo, expand 0 es no expandido y expand 1 
+							es si expandido -->
+						<filter name="group_by_instructor" string="Empresa"
+							context="{'group_by':'company_id'}" />	<!-- El string si sale, para agrupar se pone context para filtrar domain -->
+					</group>
+				</search>
+			</field>
+		</record>
 
 		<record id="act_operario" model="ir.actions.act_window">
 			<field name="name">Operarios</field> <!-- Nombre que a veces aparecer por ejemplo cuando entras de Gym classes 
