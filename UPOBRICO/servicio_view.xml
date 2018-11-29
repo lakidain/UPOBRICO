@@ -55,6 +55,7 @@
 			<field name="res_model">servicio</field>
 			<field name="view_type">form</field>
 			<field name="view_mode">form,tree</field>
+			<field name="search_view_id" ref="view_servicio_search" />
 		</record>
 
 		<menuitem name="Servicios" id="servicios_submenu" parent="upobrico"
