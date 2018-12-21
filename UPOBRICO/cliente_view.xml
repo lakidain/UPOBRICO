@@ -10,8 +10,8 @@
 				<tree string="tree_string">
 					<field name="DNI" />
 					<field name="nombre" />
-					<field name="apellidos" />
 					<field name="direccion" />
+					<field name="cita_ids" />
 				</tree>
 			</field>
 		</record>
@@ -23,8 +23,8 @@
 				<form string="No se ve">
 					<field name="DNI" />
 					<field name="nombre" />
-					<field name="apellidos" />
 					<field name="direccion" />
+					<field name="cita_ids" />
 				</form>
 			</field>
 		</record>
@@ -43,12 +43,3 @@
 
 	</data>
 </openerp>
-
-
-
-
-
-
-
-
-

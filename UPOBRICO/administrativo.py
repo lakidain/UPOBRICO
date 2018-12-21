@@ -22,22 +22,14 @@
 from osv import osv
 from osv import fields
 
-class ClassName(osv.Model):
+class administrativo(osv.Model):
     _name = 'administrativo'
-    _description = 'administrativo de citas'
+    _description = 'administrativo de cita'
  
     _columns = {
-            'DNI':fields.char('DNI', size=12, required=False),
-            'nombre':fields.char('nombre', size=140, required=False),
-            'apellidos':fields.char('apellidos', size=140, required=False)
+            'DNI':fields.char('DNI', size=9, required=False),
+            'nombre':fields.char('Nombre', size=140, required=False),
+            'cita_ids':fields.one2many('cita','administrativo_id', 'Citas'),
            }
-
-
-
-
-
-
-
-
-
-
+    
+    _sql_constraints=[('administrativo_dni_uniq','unique (dni)','El dni ya existe')]

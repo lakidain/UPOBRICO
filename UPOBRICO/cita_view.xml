@@ -9,6 +9,8 @@
 			<field name="arch" type="xml">
 				<tree string="tree_string">
 					<field name="id" />
+					<field name="administrativo_id" colspan="2" />
+					<field name="cliente_id" colspan="2" />
 					<field name="f_asignacion" />
 					<field name="f_cita" />
 					<field name="descripcion" />
@@ -24,10 +26,17 @@
 			<field name="arch" type="xml">
 				<form string="No se ve">
 					<field name="id" />
+					<field name="administrativo_id" colspan="2" />
+					<field name="cliente_id" colspan="2" />
 					<field name="f_asignacion" />
 					<field name="f_cita" />
 					<field name="descripcion" />
 					<field name="servicio_id" colspan="4" />
+					<separator string="Worfklow" colspan="4" />
+					<field name='state' widget='statusbar' statusbar_visible="solicitante,admitido,enproceso,terminado" statusbar_colors='{"Solicitante":"orange","Admitido": "green","En Proceso":"blue","Terminado": "red"}'/>
+					<button name="admitir" states="solicitante" string="Admitir" colspan="1" icon="gtk-ok" />
+					<button name="tramitar" states="admitido" string="Tramitar" colspan="1" icon="gtk-ok" />
+					<button name="terminar" states="enproceso" string="Terminar" colspan="1" icon="gtk-apply" />
 				</form>
 			</field>
 		</record>

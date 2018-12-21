@@ -22,23 +22,15 @@
 from osv import osv
 from osv import fields
 
-class ClassName(osv.Model):
+class Cliente(osv.Model):
     _name = 'cliente'
     _description = 'clientes'
  
     _columns = {
-            'DNI':fields.char('DNI', size=12, required=False),
+            'DNI':fields.char('DNI', size=9, required=False),
             'nombre':fields.char('nombre', size=140, required=False),
-            'apellidos':fields.char('apellidos', size=140, required=False),
-            'direccion':fields.char('direccion', size=140, required=False)
+            'direccion':fields.char('direccion', size=140, required=False),
+            'cita_ids':fields.one2many('cita','cliente_id', 'Citas'),
         }
-
-
-
-
-
-
-
-
-
-
+    
+    _sql_constraints=[('cliente_dni_uniq','unique (dni)','El dni ya existe')]

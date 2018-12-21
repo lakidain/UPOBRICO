@@ -10,7 +10,7 @@
 				<tree string="tree_string">
 					<field name="DNI" />
 					<field name="nombre" />
-					<field name="apellidos" />
+					<field name="cita_ids" />
 				</tree>
 			</field>
 		</record>
@@ -22,7 +22,7 @@
 				<form string="No se ve">
 					<field name="DNI" />
 					<field name="nombre" />
-					<field name="apellidos" />
+					<field name="cita_ids" />
 				</form>
 			</field>
 		</record>
@@ -33,20 +33,11 @@
 			<field name="view_type">form</field>
 			<field name="view_mode">form,tree</field>
 		</record>
-		<menuitem id="upobrico" name="Upobrico" action="act_administrativo" />
-		<menuitem name="Administrativo" id="administrativo_submenu" parent="upobrico"
-			sequence="100" />
+
+		<menuitem name="Administrativos" id="administrativo_submenu"
+			parent="upobrico" sequence="100" />
 		<menuitem name="Ver administrativo" id="administrativo_submenu_2"
 			parent="administrativo_submenu" sequence="100" action="act_administrativo" />
 
 	</data>
 </openerp>
-
-
-
-
-
-
-
-
-

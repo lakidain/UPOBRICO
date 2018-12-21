@@ -22,6 +22,12 @@
 from osv import osv
 from osv import fields
 
+def _check_fechas(self, cr, uid, ids): # No puede haber clases con capacidad negativa o superior a 50
+        for cita in self.browse(cr, uid, ids): #Esto es si cambias varios registros
+            if cita.f_asignacion > cita.f_cita:
+                return False
+        return True
+
 class cita(osv.Model):
     _name = 'cita'
     _description = 'citas que realiza un servicio'
@@ -32,4 +38,11 @@ class cita(osv.Model):
             'f_cita':fields.date('Fecha_cita', size=20, required=True),
             'descripcion':fields.char('Descripcion', size=140, required=True),
             'servicio_id': fields.many2one('servicio', 'Servicio', required=True),
+            'administrativo_id': fields.many2one('administrativo', 'Administrativo', required=True),
+            'cliente_id': fields.many2one('cliente', 'Cliente', required=True),
+            'state':fields.selection([('solicitante', 'Solicitante'),('admitido', 'Admitido'),('enproceso','En Proceso'),('terminado', 'Terminado')], 'Estados'),
         }
+    
+    _defaults = {'state':'solicitante'}
+    
+    _constraints = [(_check_fechas,'La fecha de inicio debe ser menor a la de fin',['f_asignacion','f_cita'])] 

@@ -10,6 +10,7 @@
 				<tree string="tree_string">
 					<field name="id" />
 					<field name="name" />
+					<field name="numOperarios" />
 					<field name="f_creacion" />
 					<field name="descripcion" />
 					<field name="operarios_ids" colspan="4" />
@@ -26,6 +27,7 @@
 				<form string="No se ve">
 					<field name="id" />
 					<field name="name" />
+					<field name="numOperarios" />
 					<field name="f_creacion" />
 					<field name="descripcion" />
 					<newline></newline>

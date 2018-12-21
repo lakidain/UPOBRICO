@@ -34,3 +34,5 @@ class operario(osv.Model):
             'company_id': fields.many2one('empresa', 'Company', required=True),
             'servicios_ids': fields.many2many('servicio','operario_servicio_rel','operario_id','servicio_id','Servicios que realiza'),
         }
+    
+    _sql_constraints=[('operario_dni_uniq','unique (dni)','El dni ya existe')]

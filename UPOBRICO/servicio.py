@@ -22,6 +22,14 @@
 from osv import osv
 from osv import fields
 
+#Campo Funcional para contar el numero de operarios que realizan un servicio
+def _numOperarios(self,cr,uid,ids,field,arg,context= None): #self, cr es la conexion con la base de datos, el uid usuario conectado, ids lista de los registros implicados
+        res = { }   #como clave el id del registro a modificar y como valor el valor del campo al que se le asocia
+        for servicio in self.browse(cr, uid, ids): #para cada clase busca
+            res[servicio.id]= len(servicio.operarios_ids)  #mete en el array el id de la clase asociandole la cantidad de usuarios
+            
+        return res
+
 class servicio(osv.Model):
     _name = 'servicio'
     _description = 'servicio que realiza un operario'
@@ -34,4 +42,5 @@ class servicio(osv.Model):
             'operarios_ids': fields.many2many( 'operario','operario_servicio_rel',
                                               'servicio_id', 'operario_id', 'Operarios disponibles', required=True),
             'cita_ids': fields.one2many('cita','servicio_id', 'Citas'),
+            'numOperarios' :fields.function(_numOperarios,readonly=True,type='integer',store=True,string="Numero de operarios"),
         }
