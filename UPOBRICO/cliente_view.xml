@@ -35,7 +35,7 @@
 			<field name="view_type">form</field>
 			<field name="view_mode">form,tree</field>
 		</record>
-		<menuitem id="upobrico" name="Upobrico" action="act_cliente" />
+		
 		<menuitem name="Cliente" id="cliente_submenu" parent="upobrico"
 			sequence="100" />
 		<menuitem name="Ver cliente" id="cliente_submenu_2"
