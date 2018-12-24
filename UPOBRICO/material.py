@@ -22,7 +22,7 @@
 from osv import osv
 from osv import fields
 
-class ClassName(osv.Model):
+class material(osv.Model):
     _name = 'material'
     _description = 'materiales en una reparacion'
  
@@ -30,7 +30,8 @@ class ClassName(osv.Model):
             'id':fields.char('ID', size=9, required=False),
             'nombre':fields.char('nombre', size=140, required=False),
             'precio':fields.char('precio', size=140, required=False),
-            'descripcion':fields.char('descripcion', size=140, required=False)
+            'descripcion':fields.char('descripcion', size=140, required=False),
+            'reparacion_id':fields.many2many('reparacion','material_reparacion_rel','material_id','reparacion_id','Reparaciones asignadas',required=True)
         }
 
 

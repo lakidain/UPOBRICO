@@ -12,6 +12,9 @@
 					<field name="descripcion" />
 					<field name="f_entrada" />
 					<field name="f_salida" />
+					<field name="cita_id" />
+					<field name="material_id" />
+					<field name="incidencia_id" />
 				</tree>
 			</field>
 		</record>
@@ -25,6 +28,9 @@
 					<field name="descripcion" />
 					<field name="f_entrada" />
 					<field name="f_salida" />
+					<field name="cita_id" />
+					<field name="material_id" />
+					<field name="incidencia_id" />
 				</form>
 			</field>
 		</record>

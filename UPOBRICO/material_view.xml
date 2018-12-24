@@ -12,6 +12,7 @@
 					<field name="nombre" />
 					<field name="precio" />
 					<field name="descripcion" />
+					<field name="reparacion_id" />
 				</tree>
 			</field>
 		</record>
@@ -25,21 +26,32 @@
 					<field name="nombre" />
 					<field name="precio" />
 					<field name="descripcion" />
+					<field name="reparacion_id" />
 				</form>
 			</field>
 		</record>
-
+		<record model="ir.ui.view" id="view_upobrico_material_view_graph">
+			<field name="name">view_upobrico_material_view_graph</field>
+			<field name="model">material</field>
+			<field name="type">graph</field>
+			<field name="arch" type="xml">
+				<graph string="numero de usuarios por clase" type="pie">
+					<field name="descripcion" />
+					<field name="precio" />
+				</graph>
+			</field>
+		</record>
 		<record id="act_material" model="ir.actions.act_window">
 			<field name="name">Material</field>
 			<field name="res_model">material</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">form,tree</field>
+			<field name="view_mode">form,tree,graph</field>
 		</record>
 		<menuitem id="upobrico" name="Upobrico" action="act_material" />
 		<menuitem name="Material" id="material_submenu" parent="upobrico"
 			sequence="100" />
-		<menuitem name="Ver material" id="material_submenu_2"
-			parent="material_submenu" sequence="100" action="act_material" />
+		<menuitem name="Ver material" id="material_submenu_2" parent="material_submenu"
+			sequence="100" action="act_material" />
 
 	</data>
 </openerp>

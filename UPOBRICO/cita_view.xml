@@ -15,6 +15,7 @@
 					<field name="f_cita" />
 					<field name="descripcion" />
 					<field name="servicio_id" colspan="4" />
+					<field name="reparacion_id" colspan="4" />
 				</tree>
 			</field>
 		</record>
@@ -32,6 +33,7 @@
 					<field name="f_cita" />
 					<field name="descripcion" />
 					<field name="servicio_id" colspan="4" />
+					<field name="reparacion_id" colspan="4" />
 					<separator string="Worfklow" colspan="4" />
 					<field name='state' widget='statusbar' statusbar_visible="solicitante,admitido,enproceso,terminado" statusbar_colors='{"Solicitante":"orange","Admitido": "green","En Proceso":"blue","Terminado": "red"}'/>
 					<button name="admitir" states="solicitante" string="Admitir" colspan="1" icon="gtk-ok" />

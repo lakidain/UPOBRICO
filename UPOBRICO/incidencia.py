@@ -22,13 +22,14 @@
 from osv import osv
 from osv import fields
 
-class ClassName(osv.Model):
+class incidencia(osv.Model):
     _name = 'incidencia'
     _description = 'incidencias de una reparacion'
  
     _columns = {
             'id':fields.char('ID', size=9, required=False),
-            'descripcion':fields.char('descripcion', size=140, required=False)
+            'descripcion':fields.char('descripcion', size=140, required=False),
+            'reparacion_id':fields.many2one('reparacion','Reparacion')
         }
 
 
