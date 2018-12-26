@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <openerp>
 	<data>
 		<record model="ir.ui.view" id="view_upobrico_reparacion_tree_view">
@@ -9,7 +8,7 @@
 			<field name="arch" type="xml">
 				<tree string="tree_string">
 					<field name="id" />
-					<field name="descripcion" />
+					<field name="name" />
 					<field name="f_entrada" />
 					<field name="f_salida" />
 					<field name="cita_id" />
@@ -25,11 +24,15 @@
 			<field name="arch" type="xml">
 				<form string="No se ve">
 					<field name="id" />
-					<field name="descripcion" />
+					<field name="name" />
 					<field name="f_entrada" />
 					<field name="f_salida" />
 					<field name="cita_id" />
+					<newline />
 					<field name="material_id" />
+					<newline />
+					<button name="eliminarMateriales" string="Eliminar Materiales" type="object" /> <separator />
+					<newline />
 					<field name="incidencia_id" />
 				</form>
 			</field>
@@ -41,7 +44,7 @@
 			<field name="view_type">form</field>
 			<field name="view_mode">form,tree</field>
 		</record>
-		<menuitem id="upobrico" name="Upobrico" action="act_reparacion" />
+
 		<menuitem name="Reparacion" id="reparacion_submenu" parent="upobrico"
 			sequence="100" />
 		<menuitem name="Ver reparacion" id="reparacion_submenu_2"
@@ -49,12 +52,3 @@
 
 	</data>
 </openerp>
-
-
-
-
-
-
-
-
-

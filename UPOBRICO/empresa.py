@@ -34,4 +34,4 @@ class empresa(osv.Model):
             'operario_ids': fields.one2many('operario','company_id', 'Operarios')
         }
     
-    _sql_constraints=[('empresa_nif_uniq','unique (nif)','El nif de la empresa ya existe')]
+_sql_constraints=[('empresa_nif_uniq','unique (nif)','El nif de la empresa ya existe')]

@@ -28,16 +28,6 @@ class incidencia(osv.Model):
  
     _columns = {
             'id':fields.char('ID', size=9, required=False),
-            'descripcion':fields.char('descripcion', size=140, required=False),
+            'name':fields.char('Descripcion', size=140, required=True),
             'reparacion_id':fields.many2one('reparacion','Reparacion')
         }
-
-
-
-
-
-
-
-
-
-

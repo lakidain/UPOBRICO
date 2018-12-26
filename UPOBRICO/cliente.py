@@ -27,9 +27,9 @@ class Cliente(osv.Model):
     _description = 'clientes'
  
     _columns = {
-            'DNI':fields.char('DNI', size=9, required=False),
-            'name':fields.char('nombre', size=140, required=False),
-            'direccion':fields.char('direccion', size=140, required=False),
+            'DNI':fields.char('DNI', size=9, required=True),
+            'name':fields.char('nombre', size=140, required=True),
+            'direccion':fields.char('direccion', size=140, required=True),
             'cita_ids':fields.one2many('cita','cliente_id', 'Citas'),
         }
     

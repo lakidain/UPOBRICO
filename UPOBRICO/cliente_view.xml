@@ -9,7 +9,7 @@
 			<field name="arch" type="xml">
 				<tree string="tree_string">
 					<field name="DNI" />
-					<field name="nombre" />
+					<field name="name" />
 					<field name="direccion" />
 					<field name="cita_ids" />
 				</tree>
@@ -22,8 +22,9 @@
 			<field name="arch" type="xml">
 				<form string="No se ve">
 					<field name="DNI" />
-					<field name="nombre" />
+					<field name="name" />
 					<field name="direccion" />
+					<newline />
 					<field name="cita_ids" />
 				</form>
 			</field>

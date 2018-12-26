@@ -16,7 +16,7 @@
 		</record>
 		<record id="act_cita_admitido" model="workflow.activity">
 			<field name="wkf_id" ref="wkf_cita" />
-			<field name="name">Admitida</field>
+			<field name="name">Admitido</field>
 			<field name="kind">function</field>
 			<field name="action">write({'state':'admitido'}) </field>
 		</record>
@@ -28,7 +28,7 @@
 		</record>
 		<record id="act_cita_terminado" model="workflow.activity">
 			<field name="wkf_id" ref="wkf_cita" />
-			<field name="name">Terminada</field>
+			<field name="name">Terminado</field>
 			<field name="kind">function</field>
 			<field name="action">write({'state':'terminado'}) </field>
 			<field name="flow_stop">True</field>
@@ -37,17 +37,17 @@
 		<record id="trans_solicitante_admitido" model="workflow.transition">
 			<field name="act_from" ref="act_cita_solicitante" />
 			<field name="act_to" ref="act_cita_admitido" />
-			<field name="signal">Admitir</field>
+			<field name="signal">admitir</field>
 		</record>
-		<record id="trans_solicitante_enproceso" model="workflow.transition">
+		<record id="trans_admitido_enproceso" model="workflow.transition">
 			<field name="act_from" ref="act_cita_admitido" />
 			<field name="act_to" ref="act_cita_enproceso" />
-			<field name="signal">Tramitar</field>
+			<field name="signal">tramitar</field>
 		</record>
-		<record id="trans_enproceso_cancelado" model="workflow.transition">
+		<record id="trans_enproceso_terminado" model="workflow.transition">
 			<field name="act_from" ref="act_cita_enproceso" />
 			<field name="act_to" ref="act_cita_terminado" />
-			<field name="signal">Terminar</field>
+			<field name="signal">terminar</field>
 		</record>
 	</data>
 </openerp>

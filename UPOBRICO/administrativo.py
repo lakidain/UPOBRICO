@@ -28,7 +28,7 @@ class administrativo(osv.Model):
  
     _columns = {
             'DNI':fields.char('DNI', size=9, required=False),
-            'nombre':fields.char('Nombre', size=140, required=False),
+            'name':fields.char('Nombre', size=140, required=False),
             'cita_ids':fields.one2many('cita','administrativo_id', 'Citas'),
            }
     

@@ -15,6 +15,7 @@
 				</tree>
 			</field>
 		</record>
+
 		<record model="ir.ui.view" id="view_upobrico_operario_form"> <!-- Vista Form. Control+espacio form-form para crear el form de vista -->
 			<field name="name">view_upobrico_operario_form</field>
 			<field name="model">operario</field>

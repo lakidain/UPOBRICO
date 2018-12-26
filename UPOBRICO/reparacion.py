@@ -25,23 +25,21 @@ from osv import fields
 class reparacion(osv.Model):
     _name = 'reparacion'
     _description = 'reparaciones de UPOBRICO'
+    
+    def eliminarMateriales(self,cr,uid,ids,context=None): #No ponemos la barra baja para no considerarlo privado y poder llamarlo desde fuera
+        # ids es una lista de ids
+        # desde la vista nos llega el id (en ids[0])de la clase
+        # editada en la vista de formulario
+        # Eliminamos los registros de la relación many2many
+        res = self.write(cr,uid,ids,{'material_id':[ (5, ) ]}, context=None)   #el cuarto parametro es un diccionario val. Cuando te pidan id pones ids[0]
+        return res
  
     _columns = {
             'id':fields.char('ID', size=9, required=False),
-            'descripcion':fields.char('descripcion', size=140, required=False),
-            'f_entrada':fields.date('fecha_entrada', size=20, required=False),
-            'f_salida':fields.date('fecha_salida', size=20, required=False),
-            'cita_id':fields.many2one('cita','Cita',required=True),
+            'name':fields.char('Descripcion', size=140, required=True),
+            'f_entrada':fields.date('Fecha Entrada', size=20, required=True),
+            'f_salida':fields.date('Fecha Salida', size=20, required=True),
+            'cita_id':fields.many2one('cita','Cita'),
             'material_id':fields.many2many('material','reparacion_material_rel','reparacion_id','material_id','Materiales usados'),
-            'incidencia_id':fields.many2many('incidencia','reparacion_incidencia_rel','reparacion_id','incidencia_id','Incidencias en la reparacion')
+            'incidencia_id':fields.many2many('incidencia','reparacion_incidencia_rel','reparacion_id','incidencia_id','Incidencias en la reparacion'),
         }
-
-
-
-
-
-
-
-
-
-

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <openerp>
 	<data>
 		<record model="ir.ui.view" id="view_upobrico_incidencia_tree_view">
@@ -9,7 +8,7 @@
 			<field name="arch" type="xml">
 				<tree string="tree_string">
 					<field name="id" />
-					<field name="descripcion" />
+					<field name="name" />
 					<field name="reparacion_id" />
 				</tree>
 			</field>
@@ -21,7 +20,7 @@
 			<field name="arch" type="xml">
 				<form string="No se ve">
 					<field name="id" />
-					<field name="descripcion" />
+					<field name="name" />
 					<field name="reparacion_id" />
 				</form>
 			</field>
@@ -33,7 +32,7 @@
 			<field name="view_type">form</field>
 			<field name="view_mode">form,tree</field>
 		</record>
-		<menuitem id="upobrico" name="Upobrico" action="act_incidencia" />
+		
 		<menuitem name="Incidencia" id="incidencia_submenu" parent="upobrico"
 			sequence="100" />
 		<menuitem name="Ver incidencia" id="incidencia_submenu_2"
@@ -41,12 +40,3 @@
 
 	</data>
 </openerp>
-
-
-
-
-
-
-
-
-

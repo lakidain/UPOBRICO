@@ -13,7 +13,7 @@
 					<field name="cliente_id" colspan="2" />
 					<field name="f_asignacion" />
 					<field name="f_cita" />
-					<field name="descripcion" />
+					<field name="name" />
 					<field name="servicio_id" colspan="4" />
 					<field name="reparacion_id"  colspan="4" />
 				</tree>
@@ -31,7 +31,7 @@
 					<field name="cliente_id" colspan="2" />
 					<field name="f_asignacion" />
 					<field name="f_cita" />
-					<field name="descripcion" />
+					<field name="name" />
 					<field name="servicio_id" colspan="4" />
 					<field name="reparacion_id"  colspan="4" on_change="on_change_reparacion(state)"/>
 					<separator string="Worfklow" colspan="4" />
@@ -52,7 +52,7 @@
 				<calendar string="Calendario de clases" color="servicio_id"
 					date_start="f_asignacion" date_stop="f_cita"> <!-- Start es la columna cuando empieza la clase y end cuando termina, el 
 						color es que coloree las clases por el tipo que le pongas -->
-					<field name="descripcion" />	<!--Hemos decidido poner la descripcion para que a simple vista se vea la 
+					<field name="name" />	<!--Hemos decidido poner la descripcion para que a simple vista se vea la 
 						descripcion del caso -->
 				</calendar>
 			</field>
