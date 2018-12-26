@@ -29,7 +29,7 @@ class material(osv.Model):
     _columns = {
             'id':fields.char('ID', size=9, required=False),
             'nombre':fields.char('nombre', size=140, required=False),
-            'precio':fields.char('precio', size=140, required=False),
+            'precio':fields.float('precio',digits=(12,2) , required=False),
             'descripcion':fields.char('descripcion', size=140, required=False),
             'reparacion_id':fields.many2many('reparacion','material_reparacion_rel','material_id','reparacion_id','Reparaciones asignadas',required=True)
         }

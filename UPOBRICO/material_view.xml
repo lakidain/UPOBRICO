@@ -36,8 +36,8 @@
 			<field name="type">graph</field>
 			<field name="arch" type="xml">
 				<graph string="numero de usuarios por clase" type="pie">
-					<field name="descripcion" />
-					<field name="precio" />
+					<field name="nombre" group="True"/>
+					<field name="precio" operator="+"/>
 				</graph>
 			</field>
 		</record>
