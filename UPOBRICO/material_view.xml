@@ -28,12 +28,25 @@
 				</form>
 			</field>
 		</record>
+		<!-- Graph view -->
+		<record model="ir.ui.view" id="view_upobrico_material_view_graph">
+			<field name="name">view_upobrico_material_view_graph</field>
+			<field name="model">material</field>
+			<field name="type">graph</field>
+			<field name="arch" type="xml">
+				<graph string="numero de usuarios por clase" type="pie">
+					<field name="name" group="True"/>
+					<field name="precio" operator="+"/>
+				</graph>
+			</field>
+		</record>
+
 
 		<record id="act_material" model="ir.actions.act_window">
 			<field name="name">Material</field>
 			<field name="res_model">material</field>
 			<field name="view_type">form</field>
-			<field name="view_mode">form,tree</field>
+			<field name="view_mode">form,tree,graph</field>
 		</record>
 		
 		<menuitem name="Material" id="material_submenu" parent="upobrico"
