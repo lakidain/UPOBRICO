@@ -39,7 +39,7 @@ class reparacion(osv.Model):
             'name':fields.char('Descripcion', size=140, required=True),
             'f_entrada':fields.date('Fecha Entrada', size=20, required=True),
             'f_salida':fields.date('Fecha Salida', size=20, required=True),
-            'cita_id':fields.many2one('cita','Cita'),
+            'cita_id':fields.many2one('cita','Cita', required=True),
             'material_id':fields.many2many('material','reparacion_material_rel','reparacion_id','material_id','Materiales usados'),
             'incidencia_id':fields.many2many('incidencia','reparacion_incidencia_rel','reparacion_id','incidencia_id','Incidencias en la reparacion'),
         }
