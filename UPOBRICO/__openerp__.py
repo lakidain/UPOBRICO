@@ -31,7 +31,7 @@
     """,
     "init_xml": [],
     'update_xml': [],
-    'data': ['cita_view.xml','operario_view.xml','empresa_view.xml','servicio_view.xml','administrativo_view.xml','cliente_view.xml','material_view.xml','incidencia_view.xml','reparacion_view.xml','workflow/cita_workflow.xml'], #Arreglado cita_view puesto primero
+    'data': ['cita_view.xml','operario_view.xml','empresa_view.xml','servicio_view.xml','administrativo_view.xml','cliente_view.xml','material_view.xml','incidencia_view.xml','reparacion_view.xml','workflow/cita_workflow.xml','upobrico_demo.xml'], #Arreglado cita_view puesto primero
     'demo_xml': [],
     'installable': True,
     'active': False,

@@ -12,6 +12,7 @@
 					<field name="name" />
 					<field name="precio" />
 					<field name="descripcion" />
+					<field name="reparacion_id" />
 				</tree>
 			</field>
 		</record>
@@ -25,6 +26,7 @@
 					<field name="name" />
 					<field name="precio" />
 					<field name="descripcion" />
+					<field name="reparacion_id" />
 				</form>
 			</field>
 		</record>

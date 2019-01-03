@@ -29,5 +29,5 @@ class incidencia(osv.Model):
     _columns = {
             'id':fields.char('ID', size=9, required=False),
             'name':fields.char('Descripcion', size=140, required=True),
-            'reparacion_id':fields.many2one('reparacion','Reparacion')
+            'reparacion_id':fields.many2many('reparacion','reparacion_incidencia_rel','incidencia_id','reparacion_id','Reparaciones en las que se da la incidencia'),
         }

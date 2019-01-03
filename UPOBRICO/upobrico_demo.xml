@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<openerp>
+	<data noupdate="1">
+		<record id="empresa1" model="empresa">
+			<field name="nif">17238475P</field>
+			<field name="name">Reparaciones Upo</field>
+		</record>
+		
+		<record id="operario1" model="operario">
+			<field name="dni">36985276M</field>
+			<field name="name">Paco Jimenez Ballesto</field>
+			<field name="company_id" eval="empresa1" /> <!-- Sintaxis en los many2one -->
+		</record>
+		
+		<record id="operario2" model="operario">
+			<field name="dni">93978846B</field>
+			<field name="name">Manuel Gonzalez Herrera</field>
+			<field name="company_id" eval="empresa1" /> <!-- Sintaxis en los many2one -->
+		</record>
+		
+		<record id="cliente1" model="cliente">
+			<field name="DNI">41257898S</field>
+			<field name="name">Miguel Alejo Nieto</field>
+			<field name="direccion">Salzillo, 35</field>
+		</record>
+		
+		<record id="administrativo1" model="administrativo">
+			<field name="DNI">58143643J</field>
+			<field name="name">Olaya Mascarenas Calleja</field>
+		</record>
+		
+		<record id="servicio1" model="servicio">
+			<field name="name">Arreglo de desniveles</field>
+			<field name="f_creacion">30-12-2018 12:00:00</field>
+			<field name="descripcion">Arreglo por parte de expertos de los desniveles en estructuras</field>
+			<field name="operarios_ids" eval="[(6, 0, [operario1, operario2, ])]" /> <!-- Esta es la sintaxis para los many2many y one2many -->
+		</record>
+		
+		<record id="cita1" model="cita">
+			<field name="f_asignacion">30-12-2018 12:00:00</field>
+			<field name="f_cita">2-1-2019 12:00:00</field>
+			<field name="name">Cita Manuel</field>
+			<field name="servicio_id" eval="servicio1" />
+			<field name="administrativo_id" eval="administrativo1" />
+			<field name="cliente_id" eval="cliente1" />
+			<field name="state">solicitante</field>
+		</record>
+		
+		<record id="reparacion1" model="reparacion">
+			<field name="name">Nivelado de torre en centro escolar</field>
+			<field name="f_entrada">2-1-2019 12:00:00</field>
+			<field name="f_salida">3-1-2019 12:00:00</field>
+			<field name="cita_id" eval="cita1" />
+		</record>
+		
+		<record id="material1" model="material">
+			<field name="name">Cemento</field>
+			<field name="precio">50.0</field>
+			<field name="descripcion">Conglomerante formado a partir de una mezcla de
+				caliza y arcilla calcinadas</field>
+			<field name="reparacion_id" eval="[(6, 0, [reparacion1, ])]" />
+		</record>
+		
+		<record id="material2" model="material">
+			<field name="name">Madera</field>
+			<field name="precio">29.4</field>
+			<field name="descripcion">Material ortropoto encontrado principalmente en los arboles</field>
+			<field name="reparacion_id" eval="[(6, 0, [reparacion1, ])]" />
+		</record>
+		
+		<record id="incidencia1" model="incidencia">
+			<field name="name">La torre tenia goteras</field>
+			<field name="reparacion_id" eval="[(6, 0, [reparacion1, ])]" />
+		</record>
+		
+	</data>
+</openerp>
